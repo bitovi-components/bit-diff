@@ -1,6 +1,6 @@
 {
   "name": "bit-diff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CanJS diff component",
   "main": "dist/cjs/bit-diff",
   "dependencies": {
