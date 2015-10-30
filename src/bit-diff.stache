@@ -1,17 +1,21 @@
-<div style="width:{{width}};height:{{height}}">
-<bit-tabs>
-	<bit-panel title="Current Text">
-		<textarea>{{oldText}}</textarea>
-	</bit-panel>
-	<bit-panel title="New Text">
-		<textarea>{{newText}}</textarea>
-	</bit-panel>
-	<bit-panel title="Diff">
-		{{output}}
-		<br />
+<div class="wrapper" style="width:{{width}};">
+	<div class="mode-inputs">
+		Diff Mode:
 		<input type="radio" id="inline" can-value="mode" value="1" /> <label for="inline">Inline</label>
-		&nbsp;&nbsp;
+		&nbsp;
 		<input type="radio" id="sbs" can-value="mode" value="0" /> <label for="sbs">Side-By-Side</label>
-	</bit-panel>
-</bit-tabs>
+	</div>
+	<bit-tabs>
+		<bit-panel title="Current Text">
+			<textarea>{{oldText}}</textarea>
+		</bit-panel>
+		<bit-panel title="New Text">
+			<textarea>{{newText}}</textarea>
+		</bit-panel>
+		<bit-panel title="Diff">
+			<div class="diff-wrapper">
+				{{output}}
+			</div>
+		</bit-panel>
+	</bit-tabs>
 </div>

@@ -6,6 +6,15 @@ import './lib/jsdifflib/diffview.css!';
 
 export default can.Map.extend({
 	define: {
+		width: {
+			value: '600',
+			set: function(newVal) {
+				if(newVal.indexOf('%') === -1 && newVal.indexOf('px') === -1) {
+					return newVal + 'px';
+				}
+				return newVal;
+			}
+		},
 		mode: {
 			value: 1,
 			type: 'number',
@@ -18,10 +27,7 @@ export default can.Map.extend({
 	oldText: null,
 	newText: null,
 	output: null,
-	width: '600px',
-	height: '300px',
 	makeDiff: function() {
-		this.attr('width', (this.attr('mode') === 1) ? '600px' : '1000px');
 		var base = difflib.stringAsLines(this.attr('oldText')),
             newtxt = difflib.stringAsLines(this.attr('newText')),
             sm = new difflib.SequenceMatcher(base, newtxt),
