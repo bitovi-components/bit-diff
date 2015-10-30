@@ -7,7 +7,7 @@ import './lib/jsdifflib/diffview.css!';
 export default can.Map.extend({
 	define: {
 		mode: {
-			value: 0,
+			value: 1,
 			type: 'number',
 			set: function(newVal, setVal) {
 				setVal(newVal);
@@ -21,7 +21,7 @@ export default can.Map.extend({
 	width: '600px',
 	height: '300px',
 	makeDiff: function() {
-		this.attr('width', (this.attr('mode') === 0) ? '600px' : '1000px');
+		this.attr('width', (this.attr('mode') === 1) ? '600px' : '1000px');
 		var base = difflib.stringAsLines(this.attr('oldText')),
             newtxt = difflib.stringAsLines(this.attr('newText')),
             sm = new difflib.SequenceMatcher(base, newtxt),
