@@ -11,7 +11,6 @@ export default can.Map.extend({
 			type: 'number',
 			set: function(newVal, setVal) {
 				setVal(newVal);
-				this.attr('width', (newVal === '0') ? '600px' : '1000px');
 				this.makeDiff();
 			}
 		}
@@ -22,6 +21,7 @@ export default can.Map.extend({
 	width: '600px',
 	height: '300px',
 	makeDiff: function() {
+		this.attr('width', (this.attr('mode') === 0) ? '600px' : '1000px');
 		var base = difflib.stringAsLines(this.attr('oldText')),
             newtxt = difflib.stringAsLines(this.attr('newText')),
             sm = new difflib.SequenceMatcher(base, newtxt),

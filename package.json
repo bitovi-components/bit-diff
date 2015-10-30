@@ -8,8 +8,17 @@
     "can": "2.3.1"
   },
   "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "^0.1.13",
     "steal": "0.12.3",
     "steal-tools": "0.12.1"
+  },
+  "scripts": {
+    "prepublish": "./node_modules/.bin/grunt build",
+    "publish": "git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish"
   },
   "system": {
     "main": "bit-diff",
@@ -20,17 +29,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kylegifford/bit-diff"
+    "url": "https://github.com/bitovi-components/bit-diff"
   },
   "keywords": [
     "CanJS",
     "UI",
     "Diff"
   ],
-  "author": "Kyle Gifford",
+  "author": "Bitovi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kylegifford/bit-diff/issues"
+    "url": "https://github.com/bitovi-components/bit-diff/issues"
   },
-  "homepage": "https://github.com/kylegifford/bit-diff"
+  "homepage": "https://github.com/bitovi-components/bit-diff"
 }
